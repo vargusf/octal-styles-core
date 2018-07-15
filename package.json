@@ -1,0 +1,16 @@
+{
+  "name": "octal-styles-core",
+  "version": "1.0.0",
+  "description": "Foundational styles for quick development - core files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vargusf/octal-styles-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/vargusf/octal-styles-core.git#readme"
+}
