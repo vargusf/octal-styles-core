@@ -49,20 +49,24 @@ $colors: (
   secondary:       green,
   secondary-light: lightgreen,
   secondary-dark:  darkgreen,
-  info:            #007ACA,
-  success:         #3EA157,
-  warning:         #FF9A3D,
-  error:           #DC1232
+  info:            #00B9E1,
+  success:         #2FB688,
+  warning:         #FFB756,
+  error:           #FF0949
 );
 
 $default-color: black;
-$default-background-color: grey-light;
+$default-background-color: grey-lighter;
 
 //--------------------
-// Fonts & Text
+// Fonts Text & Icons
 //--------------------
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:100,300,400,500,700,900');
+// import font awesome
+@import url('https://use.fontawesome.com/releases/v5.1.1/css/all.css');
+
+// import material icons, opens sans, roboto
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans:300,400,600,700|Roboto:100,300,400,500,700,900');
 
 $fonts: (
   primary:   'roboto',

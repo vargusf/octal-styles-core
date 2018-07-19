@@ -18,7 +18,7 @@
 // Margins
 // ---------
 
-@mixin margin($loc, $sizeAsString, $autoMobile: true) {
+@mixin margin($loc, $sizeAsString, $autoMobile: false) {
 
   $size: map-get($sizes, $sizeAsString);
 
@@ -71,7 +71,6 @@
     @include bp(md) { margin: $size-md; }
     @include bp(sm) { margin: $size-sm; }
   }
-
 }
 
 .Utils--margin-none          { @include margin(all, 0); }
@@ -149,11 +148,7 @@
 // Paddings
 // ---------
 
-@function strip-unit($number) {
-  @return $number / ($number * 0 + 1);
-}
-
-@mixin padding($loc, $sizeAsString, $noMobile: false) {
+@mixin padding($loc, $sizeAsString, $autoMobile: false) {
 
   $size: map-get($sizes, $sizeAsString);
 
@@ -164,8 +159,7 @@
   $size-md: $size;
   $size-sm: $size;
 
-
-  @if ($noMobile == false) {
+  @if ($autoMobile == true) {
     @if ($sizeAsString == xsm) or ($sizeAsString == sm) or ($sizeAsString == lg) or ($sizeAsString == xlg) or ($sizeAsString == xxlg) or ($sizeAsString == jumbo) {
       $size-md: $size/2;
       @if (strip-units($size-md) <= 5 ) {
@@ -173,7 +167,7 @@
       }
       $size-sm: $size/3;
       @if (strip-units($size-sm) <= 5 ) {
-        $size-sm: 5px;
+        $size-md: 5px;
       }
     }
   }
@@ -207,9 +201,7 @@
     @include bp(md) { padding: $size-md; }
     @include bp(sm) { padding: $size-sm; }
   }
-
 }
-
 
 .Utils--padding-none          { @include padding(all, 0); }
 .Utils--padding-tiny          { @include padding(all, tiny); }
@@ -740,6 +732,7 @@
 .Utils--border-radius-xlg           { @include border-radius(all, xlg); }
 .Utils--border-radius-xxlg          { @include border-radius(all, xxlg); }
 .Utils--border-radius-jumbo         { @include border-radius(all, jumbo); }
+.Utils--border-radius-full          { @include border-radius(all, 100%); }
 .Utils--border-radius-top-none      { @include border-radius(top, 0); }
 .Utils--border-radius-top-tiny      { @include border-radius(top, tiny); }
 .Utils--border-radius-top-xxsm      { @include border-radius(top, xxsm); }
